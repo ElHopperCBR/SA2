@@ -36,3 +36,20 @@ h1:focus {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
     text-align: start;
 }
+
+.cabecalho {
+    background-color: #b91d32;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    margin: 0;
+    text-decoration: underline;
+}
+
+.footer {
+    background-color: #b91d32;    
+    padding: 10px;
+    color: #FFFFFF;
+    font-size: 1em;
+    text-align:center;
+}
