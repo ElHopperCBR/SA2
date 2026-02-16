@@ -1,3 +1,22 @@
+* {
+    box-sizing: inherit;
+}
+
+body {
+    height: 100%;
+    font: 1.2em sans-serif;
+}
+
+.corpo-pagina {
+    padding: 20px;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
 h1:focus {
     outline: none;
 }
@@ -44,12 +63,160 @@ h1:focus {
     font-family: sans-serif;
     margin: 0;
     text-decoration: underline;
+    font-size: 1.5em;
+    
 }
 
 .footer {
-    background-color: #b91d32;    
+    background-color: #b91d32;
     padding: 10px;
     color: #FFFFFF;
     font-size: 1em;
-    text-align:center;
+    text-align: center;
+    display: flex;
+    align-items:end;
+    justify-content: center;
+}
+
+/* ================================================================== */
+/* ESTILOS DA TELA DE LOGIN */
+/* ================================================================== */
+
+.tela-de-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Container do formulário de login */
+.login-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    width: 100%;
+    max-width: 28rem;
+    border-top: 4px solid #b91d32;
+}
+
+/* Cabeçalho do formulário */
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    color: #b91d32;
+}
+
+.login-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.login-subtitle {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0.25rem 0 0 0;
+}
+
+/* Formulário */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.25rem;
+}
+
+.input-wrapper {
+    position: relative;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.input-icon {
+    position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.input-icon i {
+    height: 1.25rem;
+    width: 1.25rem;
+    color: #9ca3af;
+}
+
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #b91d32;
+    box-shadow: 0 0 0 3px rgba(185, 29, 50, 0.1);
+}
+
+/* Botão de login */
+.btn-login {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: white;
+    background-color: #b91d32;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-login:hover {
+    background-color: #991828;
+}
+
+.btn-login:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(185, 29, 50, 0.5), 0 0 0 2px rgba(185, 29, 50, 0.2);
+}
+
+/* Cores do SENAI */
+:root {
+    --senai-red: #b91d32;
+    --senai-dark: #1a1a1a;
+    --senai-gray: #e0e0e0;
 }
