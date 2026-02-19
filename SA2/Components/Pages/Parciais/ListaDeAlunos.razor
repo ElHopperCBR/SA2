@@ -1,0 +1,44 @@
+﻿@page "/ListaDeAlunos"
+
+<CabelhoPagina />
+<section class="lista-alunos-section">
+    <div class="lista-alunos-container">
+        <div class="lista-alunos-header">
+            <h2 class="lista-alunos-titulo">Lista de Alunos</h2>
+            <!-- TODO: Atualizar contador via C# -->
+            <span class="badge-contador">0 Cadastrados</span>
+        </div>
+
+        <div class="tabela-wrapper">
+            <table class="tabela-alunos">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Curso</th>
+                        <th class="text-center">Wi-Fi</th>
+                        <th class="text-right">Ações</th>
+                    </tr>
+                </thead>
+                <!-- TODO: O C# deve inserir as linhas (<tr>) aqui dentro -->
+                <tbody id="tabela-alunos">
+                    <!-- Exemplo estático para visualização (Remover quando implementar C#) -->
+                    <tr>
+                        <td class="nome-aluno">Exemplo de Aluno</td>
+                        <td class="curso-aluno">Dev. Sistemas</td>
+                        <td class="text-center">
+                            <span class="badge-status inativo">Inativo</span>
+                        </td>
+                        <td class="acoes-aluno text-right">
+                            Aguarda Admin
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<Rodape />
+
+@code {
+
+}
