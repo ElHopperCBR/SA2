@@ -74,8 +74,16 @@ h1:focus {
     font-size: 1em;
     text-align: center;
     display: flex;
-    align-items:end;
+    align-items: end;
     justify-content: center;
+}
+
+/* Texto do rodapé */
+.footer-text {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #9ca3af;
 }
 
 /* ================================================================== */
