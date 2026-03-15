@@ -67,6 +67,7 @@ h1:focus {
     
 }
 
+/* Texto do rodapé */
 .footer {
     background-color: #b91d32;
     padding: 10px;
@@ -78,7 +79,6 @@ h1:focus {
     justify-content: center;
 }
 
-/* Texto do rodapé */
 .footer-text {
     margin-top: 1.5rem;
     text-align: center;
@@ -464,6 +464,7 @@ h1:focus {
     --senai-gray: #e0e0e0;
 }
 
+/* Campo sem acesso */
 .acesso {
     background-color: #e0e0e0;
     align-items: center;
