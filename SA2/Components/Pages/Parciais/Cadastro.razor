@@ -1,4 +1,5 @@
 ﻿@page "/cadastro"
+@using SA2.Entidades
 
 <CabelhoPagina></CabelhoPagina>
 
@@ -24,8 +25,13 @@
             <label class="form-label">Curso</label>
             <select id="curso-aluno" class="form-select">
                 <option value="">Selecione...</option>
-                <option>Desenvolvimento de Sistemas</option>
-                <option>Eletromecânica</option>
+                <!-- Itera sobre a coleção de cursos disponíveis e gera uma opção para cada curso.
+                     - cursoItem.Key: Contém o identificador único do curso (usado como value)
+                     - cursoItem.Value: Contém o nome/descrição do curso (exibido ao usuário) -->
+                @foreach (var cursoItem in curso.Cursos)
+                {
+                    <option value="@cursoItem.Key">@cursoItem.Value</option>
+                }
             </select>
         </div>
 
@@ -38,5 +44,5 @@
 <Rodape></Rodape>
 
 @code {
-
+    private Curso curso = new Curso();
 }
