@@ -1,4 +1,4 @@
-﻿namespace SA2.Entidades
+﻿namespace SA2.Classes.Entidades
 {
     public class Curso
     {

@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using SA2.Entidades;
+using SA2.Classes.Entidades;
 
 namespace SA2.Data
 {
@@ -20,7 +20,7 @@ namespace SA2.Data
                 new Aluno
                 {
                     Id = 1,
-                    NomeDoAluno = "Clodoaldo",
+                    Nome = "Clodoaldo Silva",
                     RegistroAluno = 1001,
                     CursoId = 1,
                     StatusWifi = "Ativo",
@@ -29,7 +29,7 @@ namespace SA2.Data
                 new Aluno
                 {
                     Id = 2,
-                    NomeDoAluno = "César",
+                    Nome = "César Brandão",
                     RegistroAluno = 1002,
                     CursoId = 2,
                     StatusWifi = "Inativo",

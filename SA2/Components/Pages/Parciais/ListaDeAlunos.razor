@@ -1,12 +1,16 @@
 ﻿@page "/ListaDeAlunos"
+@using SA2.Data
+@using SA2.Classes.Entidades
+@using Microsoft.EntityFrameworkCore
+@inject AlunoDbContext DbContext
+@rendermode InteractiveServer
 
 <CabelhoPagina />
 <section class="lista-alunos-section">
     <div class="lista-alunos-container">
         <div class="lista-alunos-header">
             <h2 class="lista-alunos-titulo">Lista de Alunos</h2>
-            <!-- TODO: Atualizar contador via C# -->
-            <span class="badge-contador">0 Cadastrados</span>
+            <span class="badge-contador">@alunos.Count Cadastrados</span>
         </div>
 
         <div class="tabela-wrapper">
@@ -19,19 +23,31 @@
                         <th class="text-right">Ações</th>
                     </tr>
                 </thead>
-                <!-- TODO: O C# deve inserir as linhas (<tr>) aqui dentro -->
                 <tbody id="tabela-alunos">
-                    <!-- Exemplo estático para visualização (Remover quando implementar C#) -->
-                    <tr>
-                        <td class="nome-aluno">Exemplo de Aluno</td>
-                        <td class="curso-aluno">Dev. Sistemas</td>
-                        <td class="text-center">
-                            <span class="badge-status inativo">Inativo</span>
-                        </td>
-                        <td class="acoes-aluno text-right">
-                            Aguarda Admin
-                        </td>
-                    </tr>
+                    @if (alunos.Count == 0)
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center">Nenhum aluno cadastrado</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @foreach (var aluno in alunos)
+                        {
+                            <tr>
+                                <td class="nome-aluno">@aluno.Nome</td>
+                                <td class="curso-aluno">@ObterNomeCurso(aluno.CursoId)</td>
+                                <td class="text-center">
+                                    <span class="badge-status @(aluno.StatusWifi.ToLower())">
+                                        @aluno.StatusWifi
+                                    </span>
+                                </td>
+                                <td class="acoes-aluno text-right">
+                                    @aluno.StatusAction
+                                </td>
+                            </tr>
+                        }
+                    }
                 </tbody>
             </table>
         </div>
@@ -40,5 +56,22 @@
 <Rodape />
 
 @code {
+    private List<Aluno> alunos = new List<Aluno>();
+    private Curso curso = new Curso();
 
+    protected override async Task OnInitializedAsync()
+    {
+        // Carrega os alunos do banco de dados
+        alunos = await DbContext.Alunos.ToListAsync();
+    }
+
+    private string ObterNomeCurso(int cursoId)
+    {
+        // Retorna o nome do curso baseado no ID
+        if (curso.Cursos.TryGetValue(cursoId, out var nomeCurso))
+        {
+            return nomeCurso;
+        }
+        return "Curso não encontrado";
+    }
 }

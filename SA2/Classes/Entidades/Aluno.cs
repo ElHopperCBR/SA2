@@ -1,17 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SA2.Entidades
+namespace SA2.Classes.Entidades
 {
-    public class Aluno
+    public class Aluno : User
     {
-        [Key]
-        public int Id { get; set; }
-
-        [Required]
-        [MaxLength(200)]
-        public string NomeDoAluno { get; set; } = string.Empty;
-
         [Required]
         public int RegistroAluno { get; set; }
 
@@ -25,5 +18,7 @@ namespace SA2.Entidades
         [Required]
         [MaxLength(50)]
         public string StatusAction { get; set; } = "Aguardando aprovação"; // Aprovado, Aguardando aprovação, Reprovado
+        
+        // As propriedades Id, Nome e Regra são herdadas da classe User
     }
 }
