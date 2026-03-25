@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <Folder Include="Classes\Contratos\" />
-    <Folder Include="Classes\Serv\" />
   </ItemGroup>
 
 </Project>

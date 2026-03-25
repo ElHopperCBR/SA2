@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SA2.Components;
 using SA2.Data;
+using SA2.Classes.Serv;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddRazorComponents()
 // Adicionar o DbContext
 builder.Services.AddDbContext<AlunoDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<AlunoService>();
 
 var app = builder.Build();
 

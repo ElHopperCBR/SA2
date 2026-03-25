@@ -1,7 +1,8 @@
 ﻿@page "/cadastro"
 @using SA2.Classes.Entidades
+@using SA2.Classes.Serv
 @using SA2.Data
-@inject AlunoDbContext DbContext
+@inject AlunoService AlunoService
 @inject NavigationManager NavigationManager
 @rendermode InteractiveServer
 
@@ -62,48 +63,24 @@
 
     private async Task CadastrarAluno()
     {
+        cadastrando = true;
+        mensagemErro = string.Empty;
+        mensagemSucesso = string.Empty;
+
         try
         {
-            cadastrando = true;
-            mensagemErro = string.Empty;
-            mensagemSucesso = string.Empty;
+            var resultado = await AlunoService.CadastrarAlunoAsync(novoAluno);
 
-            // Validação básica
-            if (string.IsNullOrWhiteSpace(novoAluno.Nome))
+            if (resultado.Sucesso)
             {
-                mensagemErro = "Por favor, informe o nome do aluno.";
-                return;
+                mensagemSucesso = resultado.Mensagem;
+                await Task.Delay(1000);
+                NavigationManager.NavigateTo("/ListaDeAlunos");
             }
-
-            if (novoAluno.RegistroAluno <= 0)
+            else
             {
-                mensagemErro = "Por favor, informe um RA válido.";
-                return;
+                mensagemErro = resultado.Mensagem;
             }
-
-            if (novoAluno.CursoId <= 0)
-            {
-                mensagemErro = "Por favor, selecione um curso.";
-                return;
-            }
-
-            // Define os status padrão para novos cadastros
-            novoAluno.StatusWifi = "Inativo";
-            novoAluno.StatusAction = "Aguardando aprovação";
-
-            // Adiciona o aluno ao banco de dados
-            DbContext.Alunos.Add(novoAluno);
-            await DbContext.SaveChangesAsync();
-
-            mensagemSucesso = "Aluno cadastrado com sucesso!";
-
-            // Aguarda 1 segundo e redireciona para a lista de alunos
-            await Task.Delay(1000);
-            NavigationManager.NavigateTo("/ListaDeAlunos");
-        }
-        catch (Exception ex)
-        {
-            mensagemErro = $"Erro ao cadastrar aluno: {ex.Message}";
         }
         finally
         {
@@ -113,7 +90,6 @@
 
     protected override void OnInitialized()
     {
-        // Inicializa um novo aluno
         novoAluno = new Aluno();
     }
 }
