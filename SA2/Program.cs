@@ -14,6 +14,7 @@ builder.Services.AddDbContext<AlunoDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<AlunoService>();
+builder.Services.AddScoped<SA2.Services.AuthService>();
 
 var app = builder.Build();
 

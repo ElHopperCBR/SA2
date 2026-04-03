@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="SA2.Classes.Entidades.User">
-    <Position X="3.75" Y="3" Width="1.5" />
+    <Position X="4" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAACAAAAAAAAAAAAAAACAAAAAAAABAAAEAAAA=</HashCode>
       <FileName>Classes\Entidades\User.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SA2.Classes.Entidades.Curso">
-    <Position X="6.25" Y="3" Width="1.5" />
+    <Position X="7.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Entidades\Curso.cs</FileName>
@@ -22,14 +22,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SA2.Classes.Entidades.Admin">
-    <Position X="4.75" Y="5.5" Width="1.5" />
+    <Position X="5.25" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Classes\Entidades\Admin.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="SA2.Classes.Entidades.Enumeracoes.TipoRegra">
-    <Position X="6.75" Y="5.25" Width="1.5" />
+    <Position X="8" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAEAAAAAAA=</HashCode>
       <FileName>Classes\Enumeracoes\TipoRegra.cs</FileName>
